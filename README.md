@@ -1,8 +1,4 @@
-<div align="center">
 
-<img src="assets/00_banner.png" alt="Insurance Customer Response Prediction" width="100%">
-
-<br>
 
 ![Python](https://img.shields.io/badge/Python-3.10+-063B66?style=for-the-badge&logo=python&logoColor=35E0E8)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-pipeline-087FA5?style=for-the-badge&logo=scikitlearn&logoColor=white)
