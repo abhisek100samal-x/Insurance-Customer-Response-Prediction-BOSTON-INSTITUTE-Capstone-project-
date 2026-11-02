@@ -74,7 +74,7 @@ The goal is to build a classifier that scores every customer on their likelihood
 ### The class imbalance problem
 
 <div align="center">
-<img src="assets/01_target_imbalance.png" alt="Target class imbalance" width="85%">
+<img src="01_target_imbalance.png" alt="Target class imbalance" width="85%">
 </div>
 
 A model that predicts "no" for everyone is 87.7% accurate and completely useless. This is why the project is judged on **recall, PR-AUC and ROC-AUC** and not on accuracy.
