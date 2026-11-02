@@ -86,7 +86,7 @@ A model that predicts "no" for everyone is 87.7% accurate and completely useless
 ### What separates responders from non-responders?
 
 <div align="center">
-<img src="assets/02_response_drivers.png" alt="Response rate by key features" width="100%">
+<img src="02_response_drivers.png" alt="Response rate by key features" width="100%">
 </div>
 
 The dashed red line marks the 12.26% overall response rate.
@@ -103,7 +103,7 @@ The dashed red line marks the 12.26% overall response rate.
 ### Correlation analysis
 
 <div align="center">
-<img src="assets/03_correlation_heatmap.png" alt="Correlation heatmap" width="62%">
+<img src="03_correlation_heatmap.png" alt="Correlation heatmap" width="62%">
 </div>
 
 `Previously_Insured` (-0.34) and `Age` (+0.11) are the only features with a meaningful linear relationship to `Response`. Note that linear correlation understates non-linear effects, which is why the tree models later show `Vehicle_Damage` as the top feature.
@@ -157,19 +157,19 @@ All numbers below are on the **held-out test set** (76,222 customers, 9,342 true
 | **LightGBM** 🏅 | **0.8530** | **0.3583** | **0.30** | 0.87 | **0.45** | 0.73 |
 
 <div align="center">
-<img src="assets/05_model_scoreboard.png" alt="Model scoreboard" width="100%">
+<img src="05_model_scoreboard.png" alt="Model scoreboard" width="100%">
 </div>
 
 ### ROC curves
 
 <div align="center">
-<img src="assets/09_roc_tuned_models.png" alt="ROC curves for tuned models" width="62%">
+<img src="09_roc_tuned_models.png" alt="ROC curves for tuned models" width="62%">
 </div>
 
 ### Confusion matrices
 
 <div align="center">
-<img src="assets/06_confusion_matrices.png" alt="Confusion matrices" width="100%">
+<img src="06_confusion_matrices.png" alt="Confusion matrices" width="100%">
 </div>
 
 Logistic Regression catches the most responders (91%) but also flags the most false positives. LightGBM gives the best balance. All models choose recall over precision, which suits a campaign where missing a buyer costs more than one extra call.
@@ -177,7 +177,7 @@ Logistic Regression catches the most responders (91%) but also flags the most fa
 ### Impact of hyperparameter tuning
 
 <div align="center">
-<img src="assets/04_tuning_gain.png" alt="Tuning gain" width="75%">
+<img src="04_tuning_gain.png" alt="Tuning gain" width="75%">
 </div>
 
 | Model | Baseline AUC | Tuned AUC | Change | Best parameters |
@@ -190,7 +190,7 @@ Logistic Regression catches the most responders (91%) but also flags the most fa
 ### Overfitting check
 
 <div align="center">
-<img src="assets/07_overfitting_check.png" alt="Train vs test AUC" width="75%">
+<img src="07_overfitting_check.png" alt="Train vs test AUC" width="75%">
 </div>
 
 LightGBM and Logistic Regression generalise almost perfectly. Random Forest shows the largest train/test gap (0.031), which is still modest.
@@ -202,7 +202,7 @@ LightGBM and Logistic Regression generalise almost perfectly. Random Forest show
 ### Campaign efficiency
 
 <div align="center">
-<img src="assets/10_campaign_lift.png" alt="Campaign lift" width="85%">
+<img src="10_campaign_lift.png" alt="Campaign lift" width="85%">
 </div>
 
 Using the tuned LightGBM at the default 0.5 threshold on the test set, a campaign would contact **35.7%** of customers and reach **87.2%** of everyone who would have said yes. That is a **2.4× lift** over random targeting, and the remaining 64% of the list could be skipped.
@@ -210,7 +210,7 @@ Using the tuned LightGBM at the default 0.5 threshold on the test set, a campaig
 ### What drives a "yes"?
 
 <div align="center">
-<img src="assets/08_feature_importance.png" alt="Feature importance" width="75%">
+<img src="08_feature_importance.png" alt="Feature importance" width="75%">
 </div>
 
 **Recommended targeting profile**
