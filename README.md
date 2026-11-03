@@ -274,16 +274,7 @@ customer = {
 
 ---
 
-## ⚠️ Limitations and Next Steps
 
-Being upfront about what this project does and does not prove:
-
-- **Feature selection was based on linear correlation only.** `Annual_Premium` was dropped, yet the EDA shows response rising from 9.7% to 15.2% across premium deciles. A non-linear signal may have been discarded, and the claim that dropping the features improved performance should be backed by an ablation (train with and without them).
-- **Cross-validation scores are optimistic.** SMOTE was applied before `RandomizedSearchCV`, so synthetic samples leak across folds (CV AUCs of 0.84 to 0.91 versus test AUCs of 0.84 to 0.85). The **test-set numbers above are the trustworthy ones**. The fix is to place SMOTE inside an `imblearn.pipeline.Pipeline` so it is applied per fold.
-- **Probabilities are not calibrated.** Models were trained on SMOTE-balanced data, so predicted probabilities (such as the 87% in the demo) overstate true likelihood. Use them to *rank* customers, or add calibration (isotonic or Platt) before quoting them.
-- **The 0.5 threshold is not optimised.** Precision is about 30% at the default cut-off. A threshold chosen from the cost of a contact versus the value of a conversion would make the business case far sharper.
-- **The pre-tuning overfitting cell is not valid.** It scores models trained on scaled data using unscaled inputs, producing meaningless AUCs (0.20 to 0.71). Use the tuned-model check shown above.
-- **The demo and feature importance use Random Forest**, while LightGBM scored best. Re-running both with the winning model would make the story consistent.
 
 **Roadmap**
 
